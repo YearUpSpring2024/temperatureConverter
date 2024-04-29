@@ -5,8 +5,11 @@ const btn = document.getElementById("convert");
 const reset = document.getElementById("resetBtn");
 // input
 const farenheitInput = document.getElementById("farenheitInput");
+// errormessage
+const errormessage = document.getElementById("errorMessage");
 // output
 const celsiusOutput = document.getElementById("celsiusOutput");
+
 
 
 function convertFarenheitToCelsius() {
@@ -15,7 +18,8 @@ function convertFarenheitToCelsius() {
 
 
     if (farenheitInputValue === "" || isNaN(farenheit)) {
-        celsiusOutput.value = "Enter a Valid Number";
+        errormessage.innerHTML = "Enter a valid number"
+        celsiusOutput.value = "";
     }
     else {
         let celsius = (farenheit - 32) * 5 / 9;
@@ -25,6 +29,7 @@ function convertFarenheitToCelsius() {
 
 
 function resetFields() {
+    errormessage.innerHTML = ""
     farenheitInput.value = "";
     celsiusOutput.value = "";
 }

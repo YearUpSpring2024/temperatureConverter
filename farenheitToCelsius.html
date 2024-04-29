@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container">
-                <a class="navbar-brand" href="#">ThermoTransform</a>
+                <a class="navbar-brand" href="./index.html">ThermoTransform</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -50,12 +50,18 @@
         </nav>
     </header>
     <main>
+
+        <!-- todo add inside of a card-->
+
+
+
+
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="input-group">
-                        <span class="input-group-text">Temperature in Farenheit:
-                        </span>
+                        <label class="input-group-text">Temperature in Farenheit:
+                        </label>
                         <input type="text" class="form-control text-center" id="farenheitInput" placeholder="e.g, 32" />
                         <button class="btn btn-primary" id="convert">Convert</button>
                     </div>
@@ -66,8 +72,12 @@
             <div class="row mt-3 justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="input-group">
-                        <span class="input-group-text" for="celsiusOutput">Temperature in Celsius: </span>
+                        <label for="celsiusToFarenheit">Temperature in Celsius: </label>
                         <input type="text" class="form-control text-center" id="celsiusOutput" readonly />
+                    </div>
+                    <div>
+
+                        <span class="text-danger" id="errorMessage"></span>
                     </div>
                     <div>
 

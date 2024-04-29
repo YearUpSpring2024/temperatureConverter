@@ -1,7 +1,13 @@
 "use strict";;
-const btn = document.getElementById("button");
+
+// button
+const btn = document.getElementById("conver");
+// the input
 const celsiusitInput = document.getElementById("CelsiusTofarenheit");
+// outPut
 const farenheitOutput = document.getElementById("farenheitOutput");
+// error message
+const errorMessage = document.getElementById("errorMessage");
 
 
 // window.onload = init;
@@ -14,7 +20,8 @@ function convertCelsiusToFarenheit() {
     let celsius = parseFloat(celsiusitInputValue);
 
     if (celsiusitInputValue === "" || isNaN(celsius)) {
-        farenheitOutput.value = "Enter a Valid Number";
+        errorMessage.innerHTML = "Please enter a real number"
+        farenheitOutput.value = "";
     }
     else {
         let farenheit = (celsius * 9 / 5) + 32;
@@ -24,6 +31,7 @@ function convertCelsiusToFarenheit() {
 
 
 function resetFields() {
+    errorMessage.innerHTML = ""
     celsiusitInput.value = "";
     farenheitOutput.value = "";
 }
