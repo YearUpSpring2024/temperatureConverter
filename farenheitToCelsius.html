@@ -56,9 +56,8 @@
                     <div class="input-group">
                         <span class="input-group-text">Temperature in Farenheit:
                         </span>
-                        <input type="text" class="form-control text-center" id="farenheitToCelsius"
-                            placeholder="e.g, 32" />
-                        <button class="btn btn-primary" id="button">Convert</button>
+                        <input type="text" class="form-control text-center" id="farenheitInput" placeholder="e.g, 32" />
+                        <button class="btn btn-primary" id="convert">Convert</button>
                     </div>
                 </div>
             </div>
@@ -67,10 +66,13 @@
             <div class="row mt-3 justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="input-group">
-                        <span class="input-group-text" for="farenheitOutput">Temperature in Celsius: </span>
+                        <span class="input-group-text" for="celsiusOutput">Temperature in Celsius: </span>
                         <input type="text" class="form-control text-center" id="celsiusOutput" readonly />
                     </div>
+                    <div>
 
+                        <button id="resetBtn" onclick="resetFields()">Reset</button>
+                    </div>
                 </div>
             </div>
         </div>

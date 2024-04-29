@@ -1,23 +1,32 @@
 "use strict";
-const btn = document.getElementById("button");
+// button
+const btn = document.getElementById("convert");
+// reset
+const reset = document.getElementById("resetBtn");
+// input
+const farenheitInput = document.getElementById("farenheitInput");
+// output
+const celsiusOutput = document.getElementById("celsiusOutput");
 
-window.onload = init;
-
-function init() {
-    btn.onclick = convertFarenheitToCelsius;
-}
 
 function convertFarenheitToCelsius() {
-    let farenheitInput = document.getElementById("farenheitToCelsius").value.trim();
+    let farenheitInputValue = farenheitInput.value.trim();
+    let farenheit = parseFloat(farenheitInputValue);
 
-    let farenheit = parseFloat(farenheitInput);
 
-
-    if (farenheit === "" || isNaN(farenheitInput)) {
-        document.getElementById("farenheitOutput").value = "Enter a Valid Number";
+    if (farenheitInputValue === "" || isNaN(farenheit)) {
+        celsiusOutput.value = "Enter a Valid Number";
     }
     else {
         let celsius = (farenheit - 32) * 5 / 9;
-        document.getElementById("celsiusOutput").value = celsius.toFixed(2);
+        celsiusOutput.value = celsius.toFixed(2);
     }
 }
+
+
+function resetFields() {
+    farenheitInput.value = "";
+    celsiusOutput.value = "";
+}
+
+btn.addEventListener("click", convertFarenheitToCelsius);
